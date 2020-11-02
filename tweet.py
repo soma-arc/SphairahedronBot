@@ -1,4 +1,13 @@
+import argparse
 import tweepy
+
+parser = argparse.ArgumentParser()
+
+parser.add_argument('-i', '--images', nargs='*')
+
+args = parser.parse_args()
+
+print(args.images)
 
 consumer_key = 'xxx'
 consumer_secret = 'xxx'
