@@ -4,6 +4,7 @@ import tweepy
 parser = argparse.ArgumentParser()
 
 parser.add_argument('-i', '--images', nargs='*')
+parser.add_argument('-d', '--description')
 
 args = parser.parse_args()
 
@@ -23,11 +24,12 @@ api = tweepy.API(auth)
 #api.update_status('test tweet');
 #api.update_with_media(status = 'test tweet with media', filename = 'flame.png')
 
-filenames = ['flame.png', 'loxoExponential.png',
-             'fractalFlame.png', 'kleinianWalker.png']
+if args.images.length == 0:
+        exit
 media_ids = []
-for filename in filenames:
+for filename in args.images:
         res = api.media_upload(filename)
         media_ids.append(res.media_id)
 
-api.update_status(status='four images!', media_ids=media_ids)
+api.update_status(status=args.description,
+                  media_ids=media_ids)
