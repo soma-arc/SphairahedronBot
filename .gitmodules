@@ -1,0 +1,3 @@
+[submodule "SphairahedronFractalRenderer"]
+	path = SphairahedronFractalRenderer
+	url = git@github.com:soma-arc/SphairahedronFractalRenderer
