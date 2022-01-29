@@ -23,7 +23,7 @@ api = tweepy.API(auth)
 
 media_ids = []
 for filename in args.images:
-        print('upload '+ filename)
+        print('Upload '+ filename)
         res = api.media_upload(filename)
         media_ids.append(res.media_id)
 
